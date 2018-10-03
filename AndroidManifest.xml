@@ -1,0 +1,60 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.movierating"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+       <activity
+            android:name="com.example.movierating.MovieRatingActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.DEFAULT" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+       <activity android:name="com.example.movierating.DirectorName"
+ android:label="@string/app_name">
+     <intent-filter>
+         <action android:name="android.intent.action.DEFAULT" />
+         <category android:name="android.intent.category.LAUNCHER" />
+     </intent-filter>
+</activity>
+       <activity android:name=".DisplayReviewActivity" android:label="@string/app_name">
+      <intent-filter>
+        <action android:name="android.intent.action.DEFAULT" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    	</activity>
+    	<activity android:name=".ReviewListActivity" android:label="@string/app_name">
+       <intent-filter>
+         <action android:name="android.intent.action.MAIN" />
+         <category android:name="android.intent.category.LAUNCHER" />
+       </intent-filter>
+</activity>
+<activity android:name=".CONTACTLIST"
+    android:label="CONTACTLIST"><intent-filter >
+        <action android:name="android.intent.action.DEFAULT"></action>
+        <catagory android:name="android.intent.catagory.LAUNCHER"></catagory>
+    </intent-filter></activity>
+    <activity android:name=".sendSMS"
+        android:label="sendSMS"><intent-filter><action android:name="android.intent.action.DEFAULT"></action>
+            <catagory android:name="android.intent.catagory.LAUNCHER"></catagory>
+        </intent-filter></activity>
+<provider android:name="MovieRatingContentProvider" android:authorities="com.movierating.provider.Movie" android:exported="true" />
+    </application>
+    
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"></uses-permission>
+ <uses-permission android:name="android.permission.READ_CONTACTS"></uses-permission>
+ <uses-permission  android:name="android.permission.SEND_SMS"/>
+</manifest>
